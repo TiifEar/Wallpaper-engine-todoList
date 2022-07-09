@@ -1,0 +1,68 @@
+@charset "utf-8";
+@font-face{
+	font-family: 'lobster';
+	src: url("data/Lobster-Regular.ttf");
+	font-weight: 400;
+}
+@font-face{
+	font-family: 'TheNautigal';
+	src: url("data/TheNautigal-Regular.ttf");
+	font-weight: 400;
+}
+
+.ps{
+	font-family: TheNautigal;
+	font-size: 30px;
+}
+/* CSS Document */ 
+*{margin: 0; padding: 0;}
+.content{background: url("data/bacground.png"); background-repeat: no-repeat;background-size: cover;height: 100vh;overflow: hidden;}
+.container{
+	position: absolute;
+	padding: 40px;
+	max-height: 340px;
+	padding-top: 120px;
+	padding-bottom: 5px;
+	width: 318px;
+	top: 540px;
+	left: 1425px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.list li{
+	display: flex;
+	list-style-type: none;
+	align-items: center;
+	font-family: lobster;
+	font-size: 30px;
+}
+p{
+	word-wrap: break-word;
+	width: 240px;
+}
+input{
+	margin: 5px;
+	margin-right: 10px;
+}
+img{
+	margin: 10px;
+	height: 20px;
+}
+
+::-webkit-scrollbar{
+	border-radius: 10px;
+	width: 12px;
+	background-color: #8ead8e;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #bfd8bf;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #8ead8e;
+}

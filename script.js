@@ -1,6 +1,6 @@
 const listArea 	= document.querySelector('.list')
 const content 	= document.getElementsByTagName('.content')
-const container = document.getElementsByTagName('.container')
+const container = document.getElementsByTagName('.addTodo')
 
 let todoList = []
 let localTodo =localStorage.getItem("localTodo")
@@ -32,16 +32,19 @@ function writeTodo(getName, getId, getcheck){
 	let liItem = document.createElement('li')
 	liItem.setAttribute('id', getId)
 	let checIco = document.createElement('input')
-	let text = document.createElement('p')
+	let text = document.createElement('label')
 	let editIco = document.createElement('img')
 	let deletico = document.createElement('img')
 	
 	
 	checIco.type = "checkbox"
 	if(getcheck){checIco.setAttribute('checked', 'checked')}
+	checIco.setAttribute('id', getId+'ch')
 	checIco.classList.add('chaek')
 	
 	text.innerHTML=getName;
+	text.setAttribute('for', getId+'ch')
+	text.setAttribute('data-content', getName)
 	text.classList.add('text')
 	
 	editIco.src= "data/edit.png"
@@ -94,4 +97,4 @@ listArea.addEventListener("click", function (event) {
 			break
 	}
 });
-window.addEventListener('click', function(event){if(event.target.className=='container'){addNewTodo();}})
+window.addEventListener('click', function(event){if(event.target.className=='addTodo'){addNewTodo();}})

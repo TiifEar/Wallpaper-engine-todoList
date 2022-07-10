@@ -13,6 +13,10 @@
 .ps{
 	font-family: TheNautigal;
 	font-size: 30px;
+	position: absolute;
+	transform: rotate(-3deg);
+	top: 570px;
+	left: 190px;
 }
 /* CSS Document */ 
 *{margin: 0; padding: 0;}
@@ -20,14 +24,22 @@
 .container{
 	position: absolute;
 	padding: 40px;
-	max-height: 340px;
-	padding-top: 120px;
+	padding-top: 0px;
+	padding-left: 60px;
 	padding-bottom: 5px;
 	width: 318px;
 	top: 540px;
 	left: 1425px;
+	
+}
+.addTodo{
+	height: 120px;
+	width: 318px;
+}
+.list{
 	overflow-y: auto;
 	overflow-x: hidden;
+	max-height: 315px;
 }
 .list li{
 	display: flex;
@@ -36,19 +48,10 @@
 	font-family: lobster;
 	font-size: 30px;
 }
-p{
-	word-wrap: break-word;
-	width: 240px;
-}
-input{
-	margin: 5px;
-	margin-right: 10px;
-}
 img{
 	margin: 10px;
 	height: 20px;
 }
-
 ::-webkit-scrollbar{
 	border-radius: 10px;
 	width: 12px;
@@ -66,3 +69,64 @@ img{
 	border-radius: 10px;
 	background-color: #8ead8e;
 }
+
+
+
+input[type="checkbox"] {
+	position: relative;
+	width: 1.5em;
+	box-sizing: border-box;
+	height: 1.5em;
+	color: #363839;
+	border: 1px solid #bdc1c6;
+	border-radius: 4px;
+	appearance: none;
+	outline: 0;
+	cursor: pointer;
+	transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);}
+
+input[type="checkbox"]::before {
+	box-sizing: border-box;
+    position: absolute;
+    content: '';
+    display: block;
+    top: 2px;
+    left: 5px;
+    width: 8px;
+    height: 14px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;}
+
+  input[type="checkbox"]:checked {
+    color: #fff;
+	box-sizing: border-box;
+    border-color: #06842c;
+    background: #06842c;}
+
+input[type="checkbox"]:checked::before {opacity: 1;}
+
+input[type="checkbox"]:checked ~ label::before {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+
+label {
+	word-wrap: break-word;
+	font-size: 25px;
+	width: 270px;
+	margin-left: 10px;
+	position: relative;
+	box-sizing: border-box;
+	cursor: pointer;
+	user-select: none;}
+
+label::before {
+	position: absolute;
+	box-sizing: border-box;
+    content: attr(data-content);
+    color: #242424;
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #5A5A5A;
+    transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);}
